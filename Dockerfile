@@ -2,7 +2,8 @@
 FROM node:20-alpine AS sk-builder
 WORKDIR /app
 COPY sk/package.json ./
-RUN npm ci && npm run build
+RUN npm ci
+RUN npm run build
 
 FROM golang:1.22-alpine AS builder
 WORKDIR /build
