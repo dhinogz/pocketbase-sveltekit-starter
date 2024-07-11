@@ -1,7 +1,7 @@
 # Stage 1: Build Svelte
 FROM node:20-alpine AS sk-builder
 WORKDIR /app
-COPY sk/package.json sk/package-lock.json ./
+COPY sk/package.json ./
 RUN npm ci && npm run build
 
 FROM golang:1.22-alpine AS builder
